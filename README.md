@@ -1,2 +1,4 @@
-# ecs-jenkins-efs-backend
-Jenkins with a backend of EFS intended to be used as ECS
+
+# Thanks internavenue
+Based extremenly heavily on internavenue/centos-jenkins
+
