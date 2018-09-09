@@ -3,6 +3,9 @@
 # Description
 ECS/Dockerized Jenkins with a backend of EFS for persistent configurations  
 
+Available on Docker Hub:
+docker pull thecrockett/ecs-jenkins-efs-backend
+
 # Usage
 git clone ecs-jenkins-efs-backend  
 cd ecs-jenkins-efs-backend  
