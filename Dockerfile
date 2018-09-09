@@ -1,15 +1,19 @@
-FROM internavenue/centos-base:centos7
+FROM centos:latest
 
-MAINTAINER Intern Avenue Dev Team <dev@internavenue.com>
+MAINTAINER Brian Crockett - bcrockett@richmondsystemengineering.com>
 
-RUN yum install nfs-utils wget -y
+RUN yum -y install install wget 
 
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 
 RUN yum -y install \
+  nfs-utils \
   java-1.8.0-openjdk \
+  initscripts \
   jenkins
+
+
 
 # Clean up YUM when done.
 RUN yum clean all
@@ -22,13 +26,7 @@ RUN touch /first_run
 ADD etc/jenkins /etc/init.d/jenkins
 RUN chmod +x /etc/init.d/jenkins
 
-EXPOSE 8080 22
-
-# Vagrant directory can be used for Vagrant-based scenarios,
-# but you can use it for general filesystem-share with the
-# host, e.g. you can place your Puppet manifests and execute
-# puppet apply inside the container.
-#VOLUME ["/vagrant", "/run", "/var/lib/jenkins", "/var/log" "/var/cache/jenkins/war]
+EXPOSE 8080 
 
 # Kicking in
 CMD ["/scripts/start.sh"]
