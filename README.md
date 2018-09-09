@@ -1,7 +1,7 @@
 
 
 # Description
-Jenkins with a backend of EFS intended to be used as ECS
+ECS/Dockerized Jenkins with a backend of EFS for persistent configurations
 
 # Usage
 git clone ecs-jenkins-efs-backend 
