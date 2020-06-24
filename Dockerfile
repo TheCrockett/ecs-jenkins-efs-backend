@@ -5,7 +5,7 @@ MAINTAINER Brian Crockett - bcrockett@richmondsystemengineering.com>
 RUN yum -y install install wget 
 
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
-RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+RUN rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 
 RUN yum -y install \
   nfs-utils \
