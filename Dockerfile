@@ -2,7 +2,7 @@ FROM centos:8
 
 MAINTAINER Brian Crockett - bcrockett@richmondsystemengineering.com>
 
-RUN yum -y install install wget 
+RUN yum -y install wget 
 
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 RUN rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
