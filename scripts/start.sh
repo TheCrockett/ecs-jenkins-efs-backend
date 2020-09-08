@@ -17,9 +17,13 @@ fi
 pre_start_action
 post_start_action
 
-chown -R jenkins:jenkins $LIB_DIR
-chown -R jenkins:jenkins $CACHE_DIR
-chown -R jenkins:jenkins "$LOG_DIR/jenkins"
+
+#chown -R jenkins:jenkins $LIB_DIR
+find ${LIB_DIR} -not -user jenkins -execdir chown jenkins {} \+
+#chown -R jenkins:jenkins $CACHE_DIR
+find ${CACHE_DIR} -not -user jenkins -execdir chown jenkins {} \+
+#chown -R jenkins:jenkins "$LOG_DIR/jenkins"
+find $LOG_DIR/jenkins -not -user jenkins -execdir chown jenkins {} \+
 
 echo "Mounting EFS..."
 mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport ${JENKINS_EFS_HOST}:/ /var/lib/jenkins
