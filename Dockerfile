@@ -9,7 +9,7 @@ RUN rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 
 RUN yum -y install \
   nfs-utils \
-  java-1.8.0-openjdk \
+  java-11-openjdk \
   initscripts \
   jenkins
 
