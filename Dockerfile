@@ -9,7 +9,7 @@ RUN rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 
 RUN yum install -y epel-release
 
-RUN yum -y install \
+RUN yum -y --nogpgcheck install \
   nfs-utils \
   java-11-openjdk \
   initscripts \
