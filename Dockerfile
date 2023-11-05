@@ -1,4 +1,4 @@
-FROM rockylinux/rockylinux:8
+FROM rockylinux/rockylinux:9
 
 MAINTAINER Brian Crockett - bcrockett@richmondsystemengineering.com>
 
